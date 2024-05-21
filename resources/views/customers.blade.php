@@ -5,12 +5,12 @@
         <!-- <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a> -->
         <tr>
             <th>Sr. No.</th>
-            <th>Name</th>
+            <th>Customer Name</th>
             <th>Email</th>
             <th class="text-center">Action</th>
         </tr>
       </thead>
-      @forelse($admins as $key=>$row)
+      @forelse($customers as $key=>$row)
       <tr>
           <td>{{$key+1}}</td>
           <td>{{$row->name}}</td>
@@ -21,13 +21,15 @@
           </td>
       </tr>
       @empty
-        <tr>
-          <td>No Data Found</td>
-        </tr>
+      <tr>
+        <td>No Data Found</td>
+      </tr>
       @endforelse
+
     </table>
   </div>
   <div class="d-flex justify-content-center">
-      {!! $admins->links() !!}
+      {!! $customers->links() !!}
   </div>
+
 </x-layout.master-layout>

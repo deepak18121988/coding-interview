@@ -9,13 +9,13 @@
           <nav class="site-navigation text-right ml-auto " role="navigation">
 
             <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-              <li><a href="" class="nav-link">Admins</a></li>
-              <li><a href="" class="nav-link">Customers</a></li>
-              <li><a href="" class="nav-link">employees</a></li>
+              <li><a href="{{ route('admins') }}" class="nav-link">Admins</a></li>
+              <li><a href="{{ route('customers') }}" class="nav-link">Customers</a></li>
+              <li><a href="{{ route('employees') }}" class="nav-link">Employees</a></li>
 
-              <li><a href="" class="nav-link">Message Categories</a></li>
-              <li><a href="" class="nav-link">Messages</a></li>
-              <li><a href="" class="nav-link"><strong>My Messages</strong></a></li>
+              <li><a href="{{ route('message_categories') }}" class="nav-link">Message Categories</a></li>
+              <li><a href="{{ route('messages') }}" class="nav-link">Messages</a></li>
+              <li><a href="{{ route('my_messages') }}" class="nav-link"><strong>My Messages</strong></a></li>
             </ul>
           </nav>
 
