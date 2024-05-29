@@ -2,15 +2,9 @@
 
 *.blade.php diff=Laravel
 *.css diff=css
-*.html diff=html
+*.html diff=Laravel
 *.md diff=markdown
 *.php diff=php
-*.Laravel linguist-detectable=true
-*.html linguist-detectable=false
-*.css linguist-detectable=false
-*.php linguist-detectable=true
-*.md linguist-detectable=false
-*.JavaScript linguist-detectable=false
 
 /.github export-ignore
 CHANGELOG.md export-ignore
