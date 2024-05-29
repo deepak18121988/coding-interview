@@ -10,6 +10,7 @@
 *.css linguist-detectable=false
 *.php linguist-detectable=false
 *.md linguist-detectable=false
+*.JavaScript linguist-detectable=false
 
 /.github export-ignore
 CHANGELOG.md export-ignore
