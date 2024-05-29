@@ -5,7 +5,12 @@
             <h3 class="text-primary"> Message categores List </h3>
           </div>  
             <div class="col-md-8 text-end">
-                <h4> Name: {{ $employee->name }} , Email: {{ $employee->email }}</h4>
+                <h4>
+                  @if($employee) 
+                    Name: {{ $employee->name }} , Email: {{ $employee->email }}
+                  @endif  
+
+                  </h4>
             </div>
           <div class="col-12">
               <span class="text-danger text-center h6">This is without authentication when we will use authentication, This page can be accessed by only authenticated Employee & ONLY assigned issues will be loaded </span>

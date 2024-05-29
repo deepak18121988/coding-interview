@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->text('message');
-            $table->integer('message_category_id'); //message sender id
-            $table->integer('customer_id'); //message sender id
-            $table->integer('employee_id')->nullable(); // assigned employee id
+            $table->text('message')->nullable();
+            $table->foreignId('message_category_id')->nullable()->index(); //message category id
+            $table->foreignId('customer_id')->nullable()->index(); //customer id
+            $table->foreignId('employee_id')->nullable()->index(); //employee id
             $table->enum('status', ['new', 'assigned', 'solved'])->nullable()->default('new');
             $table->timestamps();
+
         });
     }
 
