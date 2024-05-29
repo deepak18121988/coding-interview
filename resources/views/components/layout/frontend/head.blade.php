@@ -14,6 +14,7 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="{{ URL::asset('css/style.css')}}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"/>
     <title>Coding Interview</title>
 </head>
+

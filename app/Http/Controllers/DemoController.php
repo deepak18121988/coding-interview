@@ -31,7 +31,7 @@ class DemoController extends Controller
     public function employees(): View
     {
         return view('employees', [
-            'employees' => Employee::paginate(5)
+            'employees' => Employee::withCount(['assigned_message', 'solved_message'])->paginate(5)
         ]);
     }
     public function message_categories(): View
@@ -43,17 +43,40 @@ class DemoController extends Controller
     public function messages(): View
     {
         return view('messages', [
-            'messages' => Message::paginate(5)
+            'messages' => Message::paginate(10),
+            'employees' => Employee::get()
+
         ]);
     }
-    public function my_messages(): View
+    public function my_messages($employee_id=1): View
     {
         return view('my_messages', [
-            'message_categores' => MessageCategory::paginate(5)
+            'employee' => Employee::find($employee_id),
+            'message_categores' => Message::where('employee_id',$employee_id)->get()
         ]);
     }
 
+    public function assign(Request $request)
+    {
+        $validated = $request->validate([
+            'employee_id' => 'required',
+            'msg_id' => 'required|array',
+        ]);
+
+        Message::whereIn('id', $validated['msg_id'])->update(['employee_id' => $validated['employee_id'], 'status' => 'assigned']);
+        return back()->with('success', 'Assigned successfully!');
+    }
+
+    public function messageUpdate(Request $request , $id)
+    {
+        
+        $message = Message::find($id);
+        if ($message) {
+            $message->update(['status' => 'solved']);
+            return back()->with('success', 'Completed successfully!');
+        }
 
 
-    
+        return back()->with('success', 'Something went wrong!');
+    }
 }

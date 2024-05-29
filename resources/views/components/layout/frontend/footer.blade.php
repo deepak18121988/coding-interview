@@ -14,5 +14,10 @@
     <script src="{{ URL::asset('js/bootstrap.min.js')}}"></script>
     <script src="{{ URL::asset('js/jquery.sticky.js')}}"></script>
     <script src="{{ URL::asset('js/main.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script>
+      $(".myselect").chosen();
+    </script>
+
 
 </footer>
