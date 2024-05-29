@@ -8,7 +8,7 @@
 *.Laravel linguist-detectable=true
 *.html linguist-detectable=false
 *.css linguist-detectable=false
-*.php linguist-detectable=false
+*.php linguist-detectable=true
 *.md linguist-detectable=false
 *.JavaScript linguist-detectable=false
 
